@@ -45,8 +45,6 @@ export default function Login() {
       <section className="form">
         <img src={logoImg} alt="ads-cz" />
 
-
-
         <form onSubmit={handleAluno} >
           <h1>Faça seu Login</h1>
           <input type="text" placeholder="matricula"
