@@ -2,20 +2,16 @@ import React, { useState } from "react";
 import { Link, useHistory } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
 import { BsSearch } from 'react-icons/bs';
-
 import api from '../../services/api';
-
-
 import './styles.css';
+import logoImg from '../../../public/logo.png';
+import dev from '../../../public/dev.png';
 
-
-import logoImg from '../../assets/logo.png';
-import dev from '../../assets/dev.png';
 
 export default function Login() {
   const [
-    numMatricula,
-    setNumMatricula
+    cadastroNumber,
+    setCadastroNumber
   ] = useState('');
 
   const history = useHistory();
@@ -26,12 +22,12 @@ export default function Login() {
 
 
     try {
-      alert(await (await api.get(`usuario/${numMatricula}`)).statusText)
-      await api.get(`usuario/${numMatricula}`);
-      //alert('Cadastro feito');
-      history.push(`curriculo/${numMatricula}`);
+      alert(await (await api.get(`user/${cadastroNumber}`)).statusText)
+      await api.get(`user/${cadastroNumber}`);
+      history.push(`data/${cadastroNumber}`);
+
     } catch (err) {
-      alert('Ops! Verifique as informações e tente novamente');
+      alert('Ops! Há algo errado');
     }
   }
 
@@ -40,9 +36,9 @@ export default function Login() {
   }
 
   return (
-    <div className="logon-container">
+    <div className="Homelogin">
 
-      <button onClick={search} className="bt_search" type="button">
+      <button onClick={search} className="search" type="button">
         <BsSearch size={19} color="#0e3746" />
       </button>
 
@@ -51,17 +47,17 @@ export default function Login() {
 
 
 
-        <form onSubmit={handleEgresso} >
-          <h1>Login</h1>
-          <input type="text" placeholder="Matricula"
-            value={numMatricula}
-            onChange={e => setNumMatricula(e.target.value)} />
+        <form onSubmit={handleAluno} >
+          <h1>Faça seu Login</h1>
+          <input type="text" placeholder="matricula"
+            value={matricula}
+            onChange={e => setMatricula(e.target.value)} />
 
           <button className="button" type="submit">Entrar</button>
 
           <Link className="back-link" to="/adm">
             <FiLogIn />
-                Acesso Restrito
+                Você um administrador? Entre aqui!!
               </Link>
 
         </form>

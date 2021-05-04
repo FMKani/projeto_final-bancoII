@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="shortcut icon" href="../media/icon.ico" type="image/x-icon" />
+  <title></title>
+  <meta http-equiv="refresh" content="180">
+</head>
+<body>
+
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <h1 class="header center white-text text-lighten-2"></h1>
+      <div class="card-panel blue-grey"> 
+        <!--The div element for the map -->
+        <style>
+          /* Always set the map height explicitly to define the size of the div
+           * element that contains the map. */
+          #map {
+            height: 300px;
+            width: 400px;
+          }
+        </style>
+
+    
+    
+      <div id="map"></div>
+
+    
+    
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+
+ 
+   <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js"></script> 
+   <script src="./styles.css"></script>
+      
+      <script src="../js/geolocation.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdjJLgiXQaPIccPfH2ZoRt3eZilZwS3Kw&callback=initMap" async defer></script>
+        <center>
+          <br>
+          <br>
+          <button class="bt" onclick="Cadastra()" >Cadastrar Endereço</button>
+          <button class="bt" onclick="Filtrar()"> Mostrar Endereço</button>
+          <button class="bt" onclick="deletarendereço()">Apagar Endereço</button>
+        </center>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer >
+   
+</footer>
+
+
+
+
+
+       <!--  Scripts-->
+
+       <script src="../js/geolocation.js"></script>
+
+       
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+ <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+
+   <!-- TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#config-web-app -->
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js"></script> 
+<script src="../js/firebase.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#config-web-app -->
+
+
+  </body>
+</html>
