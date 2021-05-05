@@ -17,11 +17,11 @@ export default function Catalog() {
   return (
     <div className="main">
       <div className="escanteio"></div>
-      <h1 className="catalog-titulo">Endereço dos DEVs</h1>
+      <h1 className="catalog-titulo">Endereço cadastradas</h1>
       
       <Link to="/catalog">
         <button className="logout-btn" type="button">
-          Voltar
+          Back
         </button>
       </Link>
 

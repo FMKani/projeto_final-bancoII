@@ -19,7 +19,7 @@ async function deleteUser(id, matricula){
     await api.delete(`users/${id}`);
     await api.delete(`user/${matricula}`)
 
-    setUsers(users.filter(users => users.id != id));
+    setUsers(users.filter(users => users.id !== id));
   }
   catch(err){
     alert("Erro ao deletar o usuário!");
@@ -37,11 +37,11 @@ function editUser(data){
   return (
     <div className="main">
       <div className="escanteio"></div>
-      <h1 className="catalog-titulo">Estes são os DEVS</h1>
+      <h1 className="catalog-titulo">Egressos Cadastrados</h1>
       
       <Link to="/info">
         <button className="info-btn" type="button">
-          Encontre os DEVs
+          Detalhes sobre os egressos
         </button>
       </Link>
       <Link to="/">
